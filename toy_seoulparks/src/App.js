@@ -1,13 +1,14 @@
 import React from 'react';
 //import logo from './logo.svg';
 //import { Counter } from './features/counter/Counter';
-import { Sample } from './features/sample/Sample';
+//import { Sample } from './features/sample/Sample';
+import { Park } from './features/parks/Park';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      
+      <Park />
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Counter />
