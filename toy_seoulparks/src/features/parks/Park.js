@@ -1,24 +1,31 @@
 import React, { useState, useEffect } from 'react';
-import { getParksList } from './parksAPI';
+import { toList, parseStr, API_KEY } from './parksAPI';
 import { List } from './List';
+import axios from 'axios';
 
 export function Park() {
-    const [parksData, setParksData] = useState({
-        list : [
-            {name : 'Parks1'},
-            {name : 'Parks2'}
-        ]
-    });
+    const [parksData, setParksData] = useState([]);
 
-    // useEffect(() => {
-    //     setParksData(getParksList());
-    // },[]);
+    useEffect(() => {
+        const fetch = async () => {
+            //setParksData(getParksList());
+            try {
+                const response = await axios.get(`http://openapi.seoul.go.kr:8088/${API_KEY}/xml/SearchParkInfoService/1/100/`);
+                const parseDatas = parseStr(response.data);
+                setParksData(toList(parseDatas));
+              } catch(e) {
+                console.log(e);
+                return e;
+              }
+        }
+        fetch();
+    },[]);
 
-    const fetchParksData = () => {
-        setParksData({
-            list : getParksList()
-        })
-    }
+    // const fetchParksData = () => {
+    //     setParksData({
+    //         list : getParksList()
+    //     })
+    // }
 
     return (
         <div>
@@ -28,7 +35,7 @@ export function Park() {
             <main>
                 <section>
                     <h2>목록</h2>
-                    <button onClick={() => fetchParksData()} value="">불러오기</button>
+                    {/* <button onClick={() => fetchParksData()} value="">불러오기</button> */}
                     <div id="list">
                         <List parksData={parksData}/>
                     </div>
