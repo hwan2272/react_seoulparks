@@ -10,11 +10,16 @@ import { Route, Routes } from 'react-router-dom';
 function App() {
   return (
     <div className="App">
-      <Routes>
+      <header>
+        <h1>서울 소재/근린 공원 정보</h1>
+      </header>
+      <main id="content" className="content">
+        <Routes>
           <Route exact path={`/`} element={<ParkMain />} />
           <Route path={`/detail/:parkIdx`} element={<ParkDetail />} />
-      </Routes>
-      
+        </Routes>
+      </main>
+      <footer></footer>
       {/* <ParkMain /> */}
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />

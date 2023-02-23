@@ -5,8 +5,81 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/3.6.0/redux.js"></script> -->
-    <title>toyProject</title>
+    <title>서울소재 근린공원</title>
 </head>
+<style>
+    /* hide */
+    .hide{position:absolute;
+				clip:rect(0 0 0 0);
+				width:1px;
+				height:1px;
+				margin:-1px;
+				overflow:hidden}
+    /* header */
+    header{font-size: 20px; color: #82ea9c;}
+    /* content_tb, notice_tb */
+    .content_tb{width: 800px;margin: 20px auto;}
+    .notice_tb{width: 800px;margin: 20px auto;
+        border-top: 2px solid #16c37b;
+        border-bottom:1px solid #555;
+        border-collapse: collapse;
+    }
+    th,td{text-align: center;}
+
+    caption{padding-left : 20px; text-align: left; font-size: 15px; margin-bottom: 20px;}
+    caption span{font-size: 18px; font-weight: bold; color: tomato;}
+
+    thead tr{height: 70px;}
+    thead tr th{border-bottom: 1px solid #ccc;}
+
+    /* tbody tr{height: 35px;} */
+    tbody tr:hover{background: white;
+background: -webkit-linear-gradient(110deg, white, lightyellow);
+background: -moz-linear-gradient(110deg, white, lightyellow);
+background: -o-linear-gradient(110deg, white, lightyellow);
+background: linear-gradient(110deg, white, lightyellow);
+border-radius: 30px 30px;cursor: pointer;}
+    tbody tr td{border-bottom: 1px solid #eee;}
+    tbody .td_address{position: relative; padding-left : 28px;text-align: left;}
+    tbody .td_address .sp_name{color: darkgoldenrod;font-size: 18px; font-weight: bold; margin-right: 8px;}
+    /* tbody .td_address button{position: absolute; top: 90px; right: 150px;} */
+    tbody .td_address .sp_address{padding-left : 55px;color: midnightblue;}
+
+    /* detail */
+    .detail{position: relative; width: 800px;margin: 20px auto;box-sizing: border-box;}
+    .detail .btn_area{position: absolute; top:10px; left:40px;}
+    .detail .btn_area button{font-size: 18px;}
+    .detail hr{border-top: 2px solid #16c37b;}
+    .detail .info_content{
+        padding-top: 15px;
+        padding-bottom: 15px;
+background: white;
+background: -webkit-linear-gradient(110deg, white, lightyellow);
+background: -moz-linear-gradient(110deg, white, lightyellow);
+background: -o-linear-gradient(110deg, white, lightyellow);
+background: linear-gradient(110deg, white, lightyellow);
+border-radius: 30px 30px;
+box-sizing: border-box;}
+
+    .detail .sp_title{font-size: 30px; font-weight: bold;color: darkgoldenrod;}
+    .detail .sp_opendt{font-size: 20px; font-weight: bold;}
+    .detail .ta_detail{font-size: 16px; font-weight: bold;
+        color: midnightblue;
+        border: 2px groove mediumblue;
+        border-radius: 10px 10px;
+        padding: 25px 12px;
+        background-color: rgb(251, 251, 251);
+    }
+    .detail .etcs{width: 800px;display: flex; font-size: 14px; text-align: left; justify-content: space-between; margin-bottom: 20px;color:indianred;}
+    .detail .etcs .main_equip{width: 500px;border: 2px groove #16c37b;border-radius: 10px 10px;box-sizing:border-box;padding: 10px 25px;background-color:rgb(251, 251, 251);font-weight: bold;}
+    .detail .etcs .main_equip h2,h3{color: darkgoldenrod;}
+    .detail .etcs .adminpart{width: 290px;border: 2px groove #16c37b;border-radius: 10px 10px;box-sizing: border-box;padding: 10px 25px;background-color:rgb(251, 251, 251);font-weight: bold;}
+    .detail .etcs .adminpart h2,h3{color: darkgoldenrod;}
+    .detail .etcs .adminpart div{padding-top: 20px;padding-bottom: 30px;}
+    .detail .visit_road{font-size: 14px; border: 2px groove #16c37b; border-radius: 10px 10px;box-sizing: border-box;margin-bottom: 20px;padding: 10px 25px;color:#78b0d1;background-color:rgb(251, 251, 251)}
+    .detail .visit_road h2,h3{color: darkgoldenrod;}
+
+</style>
 <body>
     <div id="root"></div>
     <!-- <h1 id="number">0</h1>

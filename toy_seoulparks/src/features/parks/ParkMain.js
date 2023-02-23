@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getParksList } from './ParkApi';
+import { getParksList } from './ParkUtil';
 import { ParkList } from './ParkList';
 
 export function ParkMain() {
@@ -20,20 +20,12 @@ export function ParkMain() {
     // }
 
     return (
-        <div>
-            <header>
-                <h1>서울시 공원</h1>
-            </header>
-            <main>
-                <section>
-                    {/* <h2>목록</h2> */}
-                    {/* <button onClick={() => fetchParksList()} value="">불러오기</button> */}
-                    <div id="list">
-                        <ParkList parksList={parksList}/>
-                    </div>
-                </section>
-            </main>
-            <footer></footer>
-        </div>
+        <section>
+            {/* <h2>목록</h2> */}
+            {/* <button onClick={() => fetchParksList()} value="">불러오기</button> */}
+            <div id="list" className="content_tb">
+                <ParkList parksList={parksList}/>
+            </div>
+        </section>
     )
 }
