@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { getParkDetail } from './ParkUtil.ts';
-import { useParams } from 'react-router-dom';
+import { getParkDetail } from './ParkUtil';
+import { useParams, useNavigate } from 'react-router-dom';
+import { store } from '../../app/store'
 
 export function ParkDetail() {
+    const navigate = useNavigate();
     const { parkIdx } = useParams();
     const [parkDetail, setParkDetail] = useState({});
 
     const goList = () => {
-        window.location.href=`/`;
+        navigate(`/`);
     }
 
     const gotoHome = (e, templateUrl) => {
@@ -21,6 +23,7 @@ export function ParkDetail() {
     }
 
     useEffect(() => {
+        console.log(store.getState());
         const fetchDetail = async () => {
             const fetch = await getParkDetail(parkIdx);
             setParkDetail(fetch);

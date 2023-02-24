@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export function ParkItem({parkItem, index}) {
+    const navigate = useNavigate();
+
     const gotoDetail = (parkIdx) => {
-        document.location.href = `/detail/${parkIdx}`;
+        navigate(`/detail/${parkIdx}`);
     }
     const pop = (e, url) => {
         e.preventDefault();
