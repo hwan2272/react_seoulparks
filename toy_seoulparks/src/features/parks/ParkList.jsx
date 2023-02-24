@@ -9,7 +9,7 @@ export function ParkList({parksList}) {
             </caption>
             <thead>
                 <tr>
-                    <th>연번</th>
+                    <th></th>
                     <th>썸네일</th>
                     <th>공원명<br/>주소</th>
                 </tr>

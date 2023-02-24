@@ -12,7 +12,7 @@ export function ParkItem({parkItem, index}) {
     return (
         <tr onClick={() => gotoDetail(parkItem.idx)}>
             <td>{parkItem.idx}</td>
-            <td><img src={parkItem.img} width={200} height={150}/></td>
+            <td><img src={parkItem.img} width={180} height={150}/></td>
             <td className="td_address">
                 {/* <Link to={`/detail/${parkItem.idx}`}>{parkItem.name}</Link> */}
                 <span className="sp_name">{parkItem.name}</span>

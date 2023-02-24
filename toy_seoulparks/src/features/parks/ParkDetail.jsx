@@ -42,9 +42,9 @@ export function ParkDetail() {
                     <div className='info_content'>
                         <h3 className="hide">썸네일</h3>
                         <p><span className="sp_thumbnail">
-                            <img src={parkDetail.img} width={400} height={300}></img>
+                            <img src={parkDetail.img} width={375} height={300}></img>
                             <a href="#" onClick={(e) => pop(e, parkDetail.guidance)}>
-                                <img src={parkDetail.guidance} width={400} height={300}></img>
+                                <img src={parkDetail.guidance} width={375} height={300}></img>
                             </a>
                         </span></p>
                         <h3 className="hide">개장일</h3>
