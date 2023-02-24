@@ -1,15 +1,36 @@
 import React, { useState, useEffect } from 'react';
-import { getParkDetail } from './ParkUtil';
 import { useParams, useNavigate } from 'react-router-dom';
 import { store } from '../../app/store'
+import { useAppSelector, useAppDispatch } from '../../app/hooks';
+import { createBrowserHistory } from 'history';
 
 export function ParkDetail() {
+    const history = createBrowserHistory();
     const navigate = useNavigate();
     const { parkIdx } = useParams();
     const [parkDetail, setParkDetail] = useState({});
 
+    useEffect(() => {
+        history.listen(({action}) => {
+            if(action === 'POP') {
+                //dispatch(backToMainList());
+                if(store.getState().search.conditions != '') {
+                    navigate(`/?condition=${store.getState().search.conditions}`);
+                }
+                else {
+                    navigate(`/`);
+                }
+            }
+        });
+    }, []);
+
     const goList = () => {
-        navigate(`/`);
+        if(store.getState().search.conditions != '') {
+            navigate(`/?condition=${store.getState().search.conditions}`);
+        }
+        else {
+            navigate(`/`);
+        }
     }
 
     const gotoHome = (e, templateUrl) => {
@@ -26,7 +47,7 @@ export function ParkDetail() {
         window.scrollTo(0, 0);
         const fetchDetail = async () => {
             //const fetch = await getParkDetail(parkIdx);
-            const fetch = store.getState().list.item[parkIdx-1];
+            const fetch = store.getState().search.baseList[parkIdx-1];
             setParkDetail(fetch);
         }
         fetchDetail();

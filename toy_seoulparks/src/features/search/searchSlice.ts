@@ -3,28 +3,43 @@ import { getParksList } from '../parks/ParkUtil';
 import { RootState, AppThunk } from '../../app/store';
 
 export interface ListState {
-    item : any,
+    baseList : any,
+    conditions : any,
+    searchedList : any,
+    backEventOn : boolean,
     status: 'idle' | 'loading' | 'failed';
 }
 
 const initialState: ListState = {
-    item: [],
+    baseList: [],
+    conditions: [],
+    searchedList: [],
+    backEventOn : false,
     status: 'idle',
 }
 
 export const getParksListAsync = createAsyncThunk(
-    'list/fetchList',
+    'search/fetchBaseList',
     async () => {
         const parksLIst = await getParksList();
         return parksLIst;
     }
 );
 
-export const listSlice = createSlice({
-    name: 'list',
+export const searchSlice = createSlice({
+    name: 'search',
     initialState,
     reducers: {
-
+        initMainList: (state) => {
+            state.backEventOn = false;
+        },
+        backToMainList: (state) => {
+            state.backEventOn = true;
+        },
+        conditionSearched: (state, action) => {
+            state.conditions = action.payload.condition;
+            state.searchedList = action.payload.list;
+        },
     },
     extraReducers: (builder) => {
         builder
@@ -33,7 +48,7 @@ export const listSlice = createSlice({
         })
         .addCase(getParksListAsync.fulfilled, (state, action) => {
             state.status = 'idle';
-            state.item = action.payload;
+            state.baseList = action.payload;
         })
         .addCase(getParksListAsync.rejected, (state) => {
             state.status = 'failed';
@@ -41,7 +56,9 @@ export const listSlice = createSlice({
     }
 });
 
-export default listSlice.reducer;
+export const { initMainList, backToMainList, conditionSearched } = searchSlice.actions;
+
+export default searchSlice.reducer;
 
 
 

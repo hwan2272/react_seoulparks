@@ -30,7 +30,10 @@
         /* header */
         header{font-size: 15px; color: #82ea9c;}
         /* content_tb, notice_tb */
-        .content_tb{width: 375px;margin: 20px auto;}
+        .content_tb{position: relative; width: 375px;margin: 20px auto;}
+        /* select */
+        .content_tb select{font-size: 20px;position: absolute;top: 0;right: 40px;}
+        
         .notice_tb{width: 375px;margin: 20px auto;
             border-top: 2px solid #16c37b;
             border-bottom:1px solid #555;
@@ -52,14 +55,14 @@
         background: linear-gradient(110deg, white, lightyellow);
         border-radius: 30px 30px;cursor: pointer;} */
         tbody tr td{border-bottom: 1px solid #eee;}
-        tbody .td_address{position: relative; padding-left : 28px;text-align: left;}
+        tbody .td_address{position: relative; padding-left : 10px;text-align: left;}
         tbody .td_address .sp_name{color: darkgoldenrod;font-size: 18px; font-weight: bold; margin-right: 8px;}
         /* tbody .td_address button{position: absolute; top: 90px; right: 150px;} */
         tbody .td_address .sp_address{color: midnightblue;}
 
         /* detail */
         .detail{position: relative; width: 375px;margin: 20px auto;box-sizing: border-box;}
-        .detail .btn_area{position: absolute; top:60px; left:40px;}
+        .detail .btn_area{position: absolute; top:60px; right:40px;}
         .detail .btn_area button{font-size: 18px;}
         .detail hr{border-top: 2px solid #16c37b;}
         .detail .info_content{
@@ -103,8 +106,13 @@
     @media ( min-width: 800px ) {
         /* header */
         header{font-size: 20px; color: #82ea9c;}
+        
         /* content_tb, notice_tb */
-        .content_tb{width: 800px;margin: 20px auto;}
+        .content_tb{position:relative;width: 800px;margin: 20px auto;}
+
+        /* select */
+        .content_tb select{font-size: 20px;position: absolute;top: 0;right: 40px;}
+
         .notice_tb{width: 800px;margin: 20px auto;
             border-top: 2px solid #16c37b;
             border-bottom:1px solid #555;
@@ -133,7 +141,7 @@
 
         /* detail */
         .detail{position: relative; width: 800px;margin: 20px auto;box-sizing: border-box;}
-        .detail .btn_area{position: absolute; top:10px; left:40px;}
+        .detail .btn_area{position: absolute; top:10px; right:50px;}
         .detail .btn_area button{font-size: 18px;}
         .detail hr{border-top: 2px solid #16c37b;}
         .detail .info_content{
