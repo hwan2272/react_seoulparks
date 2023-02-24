@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { store } from '../../app/store'
-import { useAppSelector, useAppDispatch } from '../../app/hooks';
 import { createBrowserHistory } from 'history';
+import { getParkDetail } from './ParkUtil';
 
 export function ParkDetail() {
     const history = createBrowserHistory();
     const navigate = useNavigate();
     const { parkIdx } = useParams();
     const [parkDetail, setParkDetail] = useState({});
-
+    
     useEffect(() => {
+        window.scrollTo(0, 0);
         history.listen(({action}) => {
             if(action === 'POP') {
                 //dispatch(backToMainList());
@@ -22,6 +23,18 @@ export function ParkDetail() {
                 }
             }
         });
+        
+        const fetchDetail = async () => {
+            let fetch = null;
+            if(store.getState().search.baseList.length > 0) {
+                fetch = store.getState().search.baseList[parkIdx-1];
+            }
+            else {
+                fetch = await getParkDetail(parkIdx);
+            }
+            setParkDetail(fetch);
+        }
+        fetchDetail();
     }, []);
 
     const goList = () => {
@@ -42,16 +55,6 @@ export function ParkDetail() {
         e.preventDefault();
         window.open(guidanceUrl, '_blank');
     }
-
-    useEffect(() => {
-        window.scrollTo(0, 0);
-        const fetchDetail = async () => {
-            //const fetch = await getParkDetail(parkIdx);
-            const fetch = store.getState().search.baseList[parkIdx-1];
-            setParkDetail(fetch);
-        }
-        fetchDetail();
-    },[]);
 
     return (
         <section>
