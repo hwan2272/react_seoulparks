@@ -23,9 +23,10 @@ export function ParkDetail() {
     }
 
     useEffect(() => {
-        console.log(store.getState());
+        window.scrollTo(0, 0);
         const fetchDetail = async () => {
-            const fetch = await getParkDetail(parkIdx);
+            //const fetch = await getParkDetail(parkIdx);
+            const fetch = store.getState().list.item[parkIdx-1];
             setParkDetail(fetch);
         }
         fetchDetail();
