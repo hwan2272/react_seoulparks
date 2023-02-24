@@ -51,7 +51,7 @@ export function ParkDetail() {
                         <p><span className="sp_opendt">{parkDetail.open_dt} 개장</span></p>
                         <h3 className="hide">공원 설명</h3>
                         <p>
-                            <textarea className="ta_detail" cols={80} rows={15} value={parkDetail.content} readOnly>
+                            <textarea className="ta_detail" cols={80} rows={10} value={parkDetail.content} readOnly>
                             </textarea>
                         </p>
                         <div className="park_image">

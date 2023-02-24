@@ -8,13 +8,23 @@
     <title>서울소재 근린공원</title>
 </head>
 <style>
+    @font-face {
+     font-family: 'S-CoreDream-3Light';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    * {
+        font-family: 'S-CoreDream-3Light'
+    }
     /* hide */
     .hide{position:absolute;
-				clip:rect(0 0 0 0);
-				width:1px;
-				height:1px;
-				margin:-1px;
-				overflow:hidden}
+        clip:rect(0 0 0 0);
+        width:1px;
+        height:1px;
+        margin:-1px;
+        overflow:hidden
+    }
     /* header */
     header{font-size: 20px; color: #82ea9c;}
     /* content_tb, notice_tb */
@@ -34,11 +44,11 @@
 
     /* tbody tr{height: 35px;} */
     tbody tr:hover{background: white;
-background: -webkit-linear-gradient(110deg, white, lightyellow);
-background: -moz-linear-gradient(110deg, white, lightyellow);
-background: -o-linear-gradient(110deg, white, lightyellow);
-background: linear-gradient(110deg, white, lightyellow);
-border-radius: 30px 30px;cursor: pointer;}
+    background: -webkit-linear-gradient(110deg, white, lightyellow);
+    background: -moz-linear-gradient(110deg, white, lightyellow);
+    background: -o-linear-gradient(110deg, white, lightyellow);
+    background: linear-gradient(110deg, white, lightyellow);
+    border-radius: 30px 30px;cursor: pointer;}
     tbody tr td{border-bottom: 1px solid #eee;}
     tbody .td_address{position: relative; padding-left : 28px;text-align: left;}
     tbody .td_address .sp_name{color: darkgoldenrod;font-size: 18px; font-weight: bold; margin-right: 8px;}
@@ -53,13 +63,14 @@ border-radius: 30px 30px;cursor: pointer;}
     .detail .info_content{
         padding-top: 15px;
         padding-bottom: 15px;
-background: white;
-background: -webkit-linear-gradient(110deg, white, lightyellow);
-background: -moz-linear-gradient(110deg, white, lightyellow);
-background: -o-linear-gradient(110deg, white, lightyellow);
-background: linear-gradient(110deg, white, lightyellow);
-border-radius: 30px 30px;
-box-sizing: border-box;}
+        background: white;
+        background: -webkit-linear-gradient(110deg, white, lightyellow);
+        background: -moz-linear-gradient(110deg, white, lightyellow);
+        background: -o-linear-gradient(110deg, white, lightyellow);
+        background: linear-gradient(110deg, white, lightyellow);
+        border-radius: 30px 30px;
+        box-sizing: border-box;
+    }
 
     .detail .sp_title{font-size: 30px; font-weight: bold;color: darkgoldenrod;}
     .detail .sp_opendt{font-size: 20px; font-weight: bold;}
