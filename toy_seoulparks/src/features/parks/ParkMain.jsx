@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getParksList } from './ParkUtil';
+import { getParksList } from './ParkUtil.ts';
 import { ParkList } from './ParkList';
 
 export function ParkMain() {

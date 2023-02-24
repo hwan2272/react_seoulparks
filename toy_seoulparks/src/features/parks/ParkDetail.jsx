@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getParkDetail } from './ParkUtil';
+import { getParkDetail } from './ParkUtil.ts';
 import { useParams } from 'react-router-dom';
 
 export function ParkDetail() {
@@ -54,6 +54,8 @@ export function ParkDetail() {
                             <textarea className="ta_detail" cols={80} rows={15} value={parkDetail.content} readOnly>
                             </textarea>
                         </p>
+                        <div className="park_image">
+                        </div>
                         <div className="etcs">
                             <div className="main_equip">
                                 <h2 className="hide">시설</h2>
@@ -77,9 +79,13 @@ export function ParkDetail() {
                                 {/* <p>{parkDetail.template}</p> */}
                             </div>
                         </div>
+                        <div className="park_image3">
+                        </div>
                         <div className="visit_road">
                             <h2>오시는길</h2>
                             <p>{parkDetail.visit_road}</p>
+                        </div>
+                        <div className="park_image2">
                         </div>
                     </div>
                 </div>

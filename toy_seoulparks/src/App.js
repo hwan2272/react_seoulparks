@@ -17,6 +17,8 @@ function App() {
         <Routes>
           <Route exact path={`/`} element={<ParkMain />} />
           <Route path={`/detail/:parkIdx`} element={<ParkDetail />} />
+          {/* <Route exact path="/" component={ParkMain} />
+          <Route path="/detail/:parkIdx" component={ParkDetail} /> */}
         </Routes>
       </main>
       <footer></footer>
