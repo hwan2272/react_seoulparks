@@ -22,6 +22,7 @@ export function ParkCondition({parksList, conditions, searchZone}) {
             zoneSet.forEach(zone =>{
                 zoneArr.push(zone);
             })
+            zoneArr.sort();
             setZoneList(zoneArr);
         }
     },[parksList]);

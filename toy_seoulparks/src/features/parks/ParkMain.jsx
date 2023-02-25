@@ -14,6 +14,7 @@ export function ParkMain() {
     const conditions = new URLSearchParams(window.location.search).get('condition')
 
     useEffect(() => {
+        document.title = `설힐공 - 서울의 힐링공원`;
         const fetchList = async () => {
             if(parksList.length <= 0 && store.getState().search.baseList.length <= 0) {
                 const fetch = await getParksList();
@@ -31,7 +32,7 @@ export function ParkMain() {
                             setParksList(searchedList);
                         }
                     }
-                }, 5);
+                }, 10);
             }
             else {
                 if(conditions != null) {

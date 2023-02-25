@@ -44,6 +44,9 @@ const dataSetToItem = (parseDatasetItem) => {
             use_refer : (parseDatasetItem.children[9]).value,
             main_equip : (parseDatasetItem.children[5]).value,
             main_plants : (parseDatasetItem.children[6]).value,
+
+            lat : (parseDatasetItem.children[18]).value,
+            lng : (parseDatasetItem.children[17]).value,
           //}
       };
   return parkItem;
