@@ -12,7 +12,11 @@ http://hwan2272.dothome.co.kr/
 
 - PC웹, 모바일웹 모두 가능 (어수룩한 반응형..)
 
-- react + redux + ts
+- react + redux + ts + js
+
+- redux도 최대한 보일러플레이트한 코드들을 쓰지 않도록 하고 -template --redux를 활용
+
+- react-router-dom 현최신 v6버전. 때문에 이전버전들로 만들어진 소스들과 차이 있음
 
 - redux store를 활용한 상태저장 관리. 크롬익스텐션에서 실제 확인가능
 
