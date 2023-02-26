@@ -17,3 +17,5 @@ http://hwan2272.dothome.co.kr/
 - 서울시api와 네이버api 활용. 
 
 - list 및 상세View - 서울시api / 상세View내 지도, 파노라마 - 네이버api
+
+- 폰트 : 눈누사이트 무료폰트중 하나인 S-coreDream
