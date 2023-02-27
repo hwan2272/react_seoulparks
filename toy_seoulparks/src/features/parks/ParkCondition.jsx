@@ -11,21 +11,23 @@ export function ParkCondition({parksList, conditions, searchZone}) {
     // },[]);
 
     useEffect(() => {
-        if(store.getState().search.baseList.length > 0) {
-            let zoneSet = new Set();
-            let zoneArr = new Array();
-            store.getState().search.baseList.map(p => {
-                if(p.zone != '') {
-                    zoneSet.add(p.zone);
-                }
-            });
-            zoneSet.forEach(zone =>{
-                zoneArr.push(zone);
-            })
-            zoneArr.sort();
-            setZoneList(zoneArr);
-        }
-    },[parksList]);
+        store.subscribe(() => {
+            if(zoneList.length <= 0 && store.getState().search.baseList.length > 0) {
+                let zoneSet = new Set();
+                let zoneArr = new Array();
+                store.getState().search.baseList.map(p => {
+                    if(p.zone != '') {
+                        zoneSet.add(p.zone);
+                    }
+                });
+                zoneSet.forEach(zone =>{
+                    zoneArr.push(zone);
+                })
+                zoneArr.sort();
+                setZoneList(zoneArr);
+            }
+        });
+    },[]);
 
     return (
         <select onChange={(e) => searchZone(e, e.target.value)} value={conditions != null ? conditions : ''}>

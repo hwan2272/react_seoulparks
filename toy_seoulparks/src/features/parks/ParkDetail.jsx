@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { store } from '../../app/store'
 import { createBrowserHistory } from 'history';
 import { getParkDetail } from './ParkUtil';
@@ -10,8 +10,10 @@ export function ParkDetail() {
     const navigate = useNavigate();
     const { parkIdx } = useParams();
     const [parkDetail, setParkDetail] = useState({});
+    const location = useLocation();
     
     useEffect(() => {
+        //document.querySelectorAll("META")[4].content = document.title + ":::" + location.state.parkName;
         window.scrollTo(0, 0);
         history.listen(({action}) => {
             if(action === 'POP') {
@@ -41,9 +43,6 @@ export function ParkDetail() {
     useEffect(() => {
         if(parkDetail != null) {
             initMap(parkDetail.lat, parkDetail.lng);
-            if(parkDetail.name != undefined) {
-                document.title = `${document.title}:::${parkDetail.name}`
-            }
         }
     },[parkDetail]);
     

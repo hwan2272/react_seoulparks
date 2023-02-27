@@ -14,25 +14,29 @@ export function ParkMain() {
     const conditions = new URLSearchParams(window.location.search).get('condition')
 
     useEffect(() => {
-        document.title = `설힐공 - 서울의 힐링공원`;
+        //document.querySelectorAll("META")[4].content = document.title;
         const fetchList = async () => {
             if(parksList.length <= 0 && store.getState().search.baseList.length <= 0) {
                 const fetch = await getParksList();
                 dispatch(getParksListAsync());
-                setParksList(fetch);
-                setTimeout(() => {
-                    if(conditions != null) {
-                        let searchedList = store.getState().search.baseList.filter(p => p.zone === conditions);
-                        if(searchedList.length > 0) {
-                            const searchedPayload = {
-                                condition : conditions,
-                                list : searchedList,
-                            };
-                            dispatch(conditionSearched(searchedPayload));
-                            setParksList(searchedList);
-                        }
+                if(conditions != null && conditions.trim().length > 0) {
+                    let searchedList = fetch.filter(p => p.zone === conditions);
+                    if(searchedList.length > 0) {
+                        const searchedPayload = {
+                            condition : conditions,
+                            list : searchedList,
+                        };
+                        dispatch(conditionSearched(searchedPayload));
+                        setParksList(searchedList);
                     }
-                }, 10);
+                    else {
+                        navigate(`/`);
+                        window.location.reload();
+                    }
+                }
+                else {
+                    setParksList(fetch);
+                }
             }
             else {
                 if(conditions != null) {

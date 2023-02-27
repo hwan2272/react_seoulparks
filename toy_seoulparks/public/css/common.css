@@ -16,9 +16,19 @@
     overflow:hidden
 }
 
+.title_a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #82ea9c;
+}
+
+.title_a:hover{
+    color: #16c37b;
+}
+
 @media ( min-width: 375px ) {
     /* header */
-    header{font-size: 15px; color: #82ea9c;}
+    header{font-size: 15px;}
     /* content_tb, notice_tb */
     .content_tb{position: relative; width: 375px;margin: 20px auto;}
     /* select */
@@ -99,7 +109,7 @@
 }
 @media ( min-width: 800px ) {
     /* header */
-    header{font-size: 20px; color: #82ea9c;}
+    header{font-size: 20px;}
     
     /* content_tb, notice_tb */
     .content_tb{position:relative;width: 800px;margin: 20px auto;}

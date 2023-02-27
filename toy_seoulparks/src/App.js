@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>설힐공 - 서울의 힐링공원</h1>
+        <h1><a className="title_a" href="http://hwan2272.dothome.co.kr/">설힐공 - 서울의 힐링공원</a></h1>
       </header>
       <main id="content" className="content">
         <Routes>
