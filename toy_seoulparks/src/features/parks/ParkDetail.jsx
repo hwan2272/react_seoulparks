@@ -3,8 +3,8 @@ import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { store } from '../../app/store'
 import { createBrowserHistory } from 'history';
 import { getParkDetail } from './ParkUtil';
-import { initMap } from './ParkMap';
-import { getAroundPlaces } from './ParkAroundPlaces';
+import { naverInitMap, naverInitPano } from './ParkMap';
+import { ParkAroundPlaces } from './ParkAroundPlaces';
 
 export function ParkDetail() {
     const history = createBrowserHistory();
@@ -43,8 +43,8 @@ export function ParkDetail() {
 
     useEffect(() => {
         if(parkDetail != null) {
-            initMap(parkDetail.lat, parkDetail.lng);
-            getAroundPlaces(parkDetail.lat, parkDetail.lng);
+            naverInitMap(parkDetail.lat, parkDetail.lng);
+            naverInitPano(parkDetail.lat, parkDetail.lng);
         }
     },[parkDetail]);
     
@@ -127,10 +127,10 @@ export function ParkDetail() {
                             </div>
                         </div>
                         <div className="visit_road">
-                            <h2 className="hide">주변 정보</h2>
-                            <h3>주변 음식점 / 카페 위치</h3>
+                            <h2>주변 정보</h2>
                             <div id="around_map" className="around_map">
                             </div>
+                            <ParkAroundPlaces lat={parkDetail.lat} lng={parkDetail.lng} />
                         </div>
                     </div>
                 </div>

@@ -106,8 +106,16 @@
     .detail .etcs .adminpart div{padding-top: 20px;padding-bottom: 30px;}
     .detail .visit_road{font-size: 14px; border: 2px groove #16c37b; border-radius: 10px 10px;box-sizing: border-box;margin-bottom: 10px;padding: 10px 25px;color:#78b0d1;background-color:rgb(251, 251, 251)}
     .detail .visit_road h2,h3{text-align: left;color: darkgoldenrod;}
-    .detail .around_map{width: 340px;margin: 10px auto; height:300px;border: 2px groove tomato; border-radius: 10px 10px;background-color:rgb(251, 251, 251);}
-    .detail .around_map .overlay{height: 20px; font-size: 15px; font-weight: bold; color: orchid;background: white;border: 2px groove #78b0d1; border-radius: 5px 5px; padding: 1px 3px;}
+    .detail .around_map{width: 320px;margin: 10px auto; height:300px;border: 2px groove tomato; border-radius: 10px 10px;background-color:rgb(251, 251, 251);}
+    .detail .around_map .overlay_fd6{height: 20px; font-size: 15px; font-weight: bold; color: darkorchid;background: white;border: 2px groove #78b0d1; border-radius: 5px 5px; padding: 1px 3px;}
+    .detail .around_map .overlay_ce7{height: 20px; font-size: 15px; font-weight: bold; color: #555;background: white;border: 2px groove #78b0d1; border-radius: 5px 5px; padding: 1px 3px;}
+    .detail .around_info{text-align: left;}
+    .detail .around_info .around_fd6{font-size: 15px;text-align: left; color: darkorchid;list-style: circle;}
+    .detail .around_info .around_fd6 li a{text-decoration: none; font-weight: bold; color: darkorchid;}
+    .detail .around_info .around_fd6 li a:hover{color: hotpink;}
+    .detail .around_info .around_ce7{font-size: 15px;text-align: left; color: #555;list-style: circle;}
+    .detail .around_info .around_ce7 li a{text-decoration: none; font-weight: bold; color: #555;}
+    .detail .around_info .around_ce7 li a:hover{color: brown;}
 }
 @media ( min-width: 800px ) {
     /* header */
@@ -192,5 +200,13 @@
     .detail .visit_road{font-size: 14px; border: 2px groove #16c37b; border-radius: 10px 10px;box-sizing: border-box;margin-bottom: 10px;padding: 10px 25px;color:#78b0d1;background-color:rgb(251, 251, 251)}
     .detail .visit_road h2,h3{text-align: left; color: darkgoldenrod;}
     .detail .around_map{width: 750px;margin: 10px auto; height:300px;border: 2px groove tomato; border-radius: 10px 10px;background-color:rgb(251, 251, 251);}
-    .detail .around_map .overlay{height: 20px; font-size: 15px; font-weight: bold; color: orchid;background: white;border: 2px groove #78b0d1; border-radius: 5px 5px; padding: 1px 3px;}
+    .detail .around_map .overlay_fd6{height: 20px; font-size: 15px; font-weight: bold; color: darkorchid;background: white;border: 2px groove #78b0d1; border-radius: 5px 5px; padding: 1px 3px;}
+    .detail .around_map .overlay_ce7{height: 20px; font-size: 15px; font-weight: bold; color: #555;background: white;border: 2px groove #78b0d1; border-radius: 5px 5px; padding: 1px 3px;}
+    .detail .around_info{text-align: left;}
+    .detail .around_info .around_fd6{font-size: 15px;text-align: left; color: darkorchid;list-style: circle;}
+    .detail .around_info .around_fd6 li a{text-decoration: none; font-weight: bold; color: darkorchid;}
+    .detail .around_info .around_fd6 li a:hover{color: hotpink;}
+    .detail .around_info .around_ce7{font-size: 15px;text-align: left; color: #555;list-style: circle;}
+    .detail .around_info .around_ce7 li a{text-decoration: none; font-weight: bold; color: #555;}
+    .detail .around_info .around_ce7 li a:hover{color: brown;}
 }

@@ -49,7 +49,9 @@ export function ParkMain() {
                     setParksList(searchedList);
                 }
                 else {
-                    setParksList(store.getState().search.baseList);
+                    //setParksList(store.getState().search.baseList);
+                    navigate(`/`);
+                    window.location.reload();
                 }
             }
         }
