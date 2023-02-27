@@ -4,6 +4,7 @@ import { store } from '../../app/store'
 import { createBrowserHistory } from 'history';
 import { getParkDetail } from './ParkUtil';
 import { initMap } from './ParkMap';
+import { getAroundPlaces } from './ParkAroundPlaces';
 
 export function ParkDetail() {
     const history = createBrowserHistory();
@@ -43,6 +44,7 @@ export function ParkDetail() {
     useEffect(() => {
         if(parkDetail != null) {
             initMap(parkDetail.lat, parkDetail.lng);
+            getAroundPlaces(parkDetail.lat, parkDetail.lng);
         }
     },[parkDetail]);
     
@@ -75,22 +77,23 @@ export function ParkDetail() {
                 <div id="info">
                     <h2 className="hide">전체개요</h2>
                     <h3 className="hide">공원명</h3>
-                    <p><span className="sp_title">{parkDetail.name} (소재지 : {parkDetail.zone})</span></p>
+                    <p><span className="sp_title">{parkDetail.name}</span></p>
                     <div className="info_content">
-                        <div className="thumbnail">
-                            <h3 className="hide">썸네일</h3>
-                            <p><span className="sp_thumbnail">
-                                <img src={parkDetail.img} width={375} height={300}></img>
-                                <a href="#" onClick={(e) => pop(e, parkDetail.guidance)}>
-                                    <img src={parkDetail.guidance} width={375} height={300}></img>
-                                </a>
-                            </span></p>
-                        </div>
-                        <div id="map" className="park_map">
-                        </div>
-                        <div className="opendt">
-                            <h3 className="hide">개장일</h3>
-                            <p><span className="sp_opendt">{parkDetail.open_dt} 개장</span></p>
+                        <div className="info_map">
+                            <div className="thumbnail">
+                                <h3 className="hide">썸네일</h3>
+                                <p><span className="sp_thumbnail">
+                                    <img src={parkDetail.img} width={360} height={300}></img>
+                                    <a href="#" onClick={(e) => pop(e, parkDetail.guidance)}>
+                                        <img src={parkDetail.guidance} width={360} height={300}></img>
+                                    </a>
+                                </span></p>
+                            </div>
+                            <div className="visit_map">
+                                <h2>{parkDetail.address}</h2>
+                                <div id="map" className="park_map">
+                                </div>
+                            </div>
                         </div>
                         <div className="park_intro">
                             <h3 className="hide">공원 설명</h3>
@@ -112,7 +115,8 @@ export function ParkDetail() {
                                 <p>{parkDetail.use_refer}</p>
                             </div>
                             <div className="adminpart">
-                                <h2>관리부서</h2>
+                                <h2 className="hide">관리부서</h2>
+                                <h3>관리부서</h3>
                                 <div>
                                     <p>{parkDetail.adminpart}</p>
                                     <p>{parkDetail.admintel}</p>
@@ -122,16 +126,12 @@ export function ParkDetail() {
                                 {/* <p>{parkDetail.template}</p> */}
                             </div>
                         </div>
-                        {/* <div className="park_image3">
-                        </div> */}
                         <div className="visit_road">
-                            <h2>{parkDetail.address} 주변 지도 / 찾아가는 길</h2>
-                            <div id="map2" className="park_map2">
+                            <h2 className="hide">주변 정보</h2>
+                            <h3>주변 음식점 / 카페 위치</h3>
+                            <div id="around_map" className="around_map">
                             </div>
-                            <p>{parkDetail.visit_road}</p>
                         </div>
-                        {/* <div className="park_image2">
-                        </div> */}
                     </div>
                 </div>
             </div>

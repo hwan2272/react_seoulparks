@@ -31,9 +31,13 @@ export function ParkCondition({parksList, conditions, searchZone}) {
 
     return (
         <select onChange={(e) => searchZone(e, e.target.value)} value={conditions != null ? conditions : ''}>
-            <option key={-1} value="">지역전체</option>
             {zoneList && zoneList.map((zone, index) => {
-                return <option key={index} value={zone}>{zone}</option>
+                return (
+                    index == 0 ?
+                        <option key={index} value="">지역전체</option>
+                    :
+                        <option key={index} value={zone}>{zone}</option>
+                )
             })}
         </select>
     );

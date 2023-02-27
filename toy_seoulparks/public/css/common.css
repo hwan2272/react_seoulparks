@@ -26,7 +26,7 @@
     color: #16c37b;
 }
 
-@media ( min-width: 375px ) {
+@media ( min-width: 375px ) and ( max-width: 799px ) {
     /* header */
     header{font-size: 15px;}
     /* content_tb, notice_tb */
@@ -62,7 +62,7 @@
 
     /* detail */
     .detail{position: relative; width: 375px;margin: 20px auto;box-sizing: border-box;}
-    .detail .btn_area{position: absolute; top:60px; right:40px;}
+    .detail .btn_area{position: absolute; top:20px; right:10px;}
     .detail .btn_area button{font-size: 18px;}
     .detail hr{border-top: 2px solid #16c37b;}
     .detail .info_content{
@@ -78,11 +78,13 @@
     }
 
     .detail .sp_title{font-size: 23px; font-weight: bold;color: darkgoldenrod;}
-    .detail .opendt{height:20px;position:relative;margin-bottom: 5px;}
-    .detail .sp_opendt{font-size: 20px; font-weight: bold;}
+    .detail .sp_thumbnail img{border-radius: 10px 10px;}
+    .detail .info_map{font-size: 14px; border: 2px groove #82ea9c; border-radius: 10px 10px;box-sizing: border-box;margin-bottom: 10px;padding: 10px 5px;color:#78b0d1;background-color:rgb(251, 251, 251)}
+    .detail .visit_map h2,h3{color: midnightblue;}
+    .detail .park_map{width: 340px;margin: 10px auto; height:300px;border: 2px groove tomato; border-radius: 10px 10px;background-color:rgb(251, 251, 251);}
     .detail .ta_detail{
         width: 375px;
-        margin: 10px auto 6px;
+        margin: 0 auto 6px;
         font-size: 14px; font-weight: bold;
         color: midnightblue;
         border: 2px groove mediumblue;
@@ -91,13 +93,11 @@
         background-color: rgb(251, 251, 251);
         box-sizing: border-box;
     }
-    .detail .park_map{width: 375px;height:250px;border: 2px groove tomato; border-radius: 10px 10px;margin-bottom: 10px;background-color:rgb(251, 251, 251);}
     .detail .park_pano{width: 375px;height:400px;border: 2px groove aquamarine; border-radius: 10px 10px;margin-bottom: 10px;background-color:rgb(251, 251, 251);box-sizing: border-box;}
     .detail .park_image{width: 375px;height:250px;border: 2px groove #16c37b; border-radius: 10px 10px;margin-bottom: 10px;background-color:rgb(251, 251, 251);background: url(../../images/park.jpg) no-repeat;box-sizing: border-box;}
     .detail .park_image2{width: 375px;height:250px;border: 2px groove #16c37b; border-radius: 10px 10px;margin-bottom: 10px;background-color:rgb(251, 251, 251);background: url(../../images/park2.jpg) no-repeat;box-sizing: border-box;}
     .detail .park_image3{width: 375px;height:250px;border: 2px groove #16c37b; border-radius: 10px 10px;margin-bottom: 10px;background-color:rgb(251, 251, 251);background: url(../../images/park3.jpg) no-repeat;box-sizing: border-box;}
-    .detail .park_map2{width: 255px;margin: 10px auto; height:300px;border: 2px groove tomato; border-radius: 10px 10px;background-color:rgb(251, 251, 251);}
-
+    
     .detail .etcs{width: 375px;font-size: 14px; text-align: left; justify-content: space-between; margin-bottom: 10px;color:indianred;}
     .detail .etcs .main_equip{border: 2px groove #16c37b;border-radius: 10px 10px;box-sizing:border-box;padding: 10px 25px;background-color:rgb(251, 251, 251);font-weight: bold;}
     .detail .etcs .main_equip h2,h3{color: darkgoldenrod;}
@@ -105,7 +105,9 @@
     .detail .etcs .adminpart h2,h3{color: darkgoldenrod;}
     .detail .etcs .adminpart div{padding-top: 20px;padding-bottom: 30px;}
     .detail .visit_road{font-size: 14px; border: 2px groove #16c37b; border-radius: 10px 10px;box-sizing: border-box;margin-bottom: 10px;padding: 10px 25px;color:#78b0d1;background-color:rgb(251, 251, 251)}
-    .detail .visit_road h2,h3{color: darkgoldenrod;}
+    .detail .visit_road h2,h3{text-align: left;color: darkgoldenrod;}
+    .detail .around_map{width: 340px;margin: 10px auto; height:300px;border: 2px groove tomato; border-radius: 10px 10px;background-color:rgb(251, 251, 251);}
+    .detail .around_map .overlay{height: 20px; font-size: 15px; font-weight: bold; color: orchid;background: white;border: 2px groove #78b0d1; border-radius: 5px 5px; padding: 1px 3px;}
 }
 @media ( min-width: 800px ) {
     /* header */
@@ -160,11 +162,13 @@
         box-sizing: border-box;
     }
     .detail .sp_title{font-size: 30px; font-weight: bold;color: darkgoldenrod;}
-    .detail .opendt{height:20px;position:relative;margin-bottom: 5px;}
-    .detail .sp_opendt{font-size: 20px; font-weight: bold;}
+    .detail .sp_thumbnail img{border-radius: 10px 10px;}
+    .detail .info_map{font-size: 14px; border: 2px groove #82ea9c; border-radius: 10px 10px;box-sizing: border-box;margin-bottom: 10px;padding: 10px 5px;color:#78b0d1;background-color:rgb(251, 251, 251)}
+    .detail .visit_map h2,h3{color: midnightblue;}
+    .detail .park_map{width: 750px;margin: 10px auto; height:300px;border: 2px groove tomato; border-radius: 10px 10px;background-color:rgb(251, 251, 251);}
     .detail .ta_detail{
         width: 800px;
-        margin: 10px auto 6px;
+        margin: 0 auto 6px;
         font-size: 16px; font-weight: bold;
         color: midnightblue;
         border: 2px groove mediumblue;
@@ -173,19 +177,20 @@
         background-color: rgb(251, 251, 251);
         box-sizing: border-box;
     }
-    .detail .park_map{width: 800px;height:250px;border: 2px groove tomato; border-radius: 10px 10px;margin-bottom: 10px;background-color:rgb(251, 251, 251);}
     .detail .park_pano{width: 800px;height:400px;border: 2px groove aquamarine; border-radius: 10px 10px;margin-bottom: 10px;background-color:rgb(251, 251, 251);box-sizing: border-box;}
     .detail .park_image{width: 800px;height:250px;border: 2px groove #16c37b; border-radius: 10px 10px;margin-bottom: 10px;background-color:rgb(251, 251, 251);background: url(../../images/park.jpg) no-repeat;}
     .detail .park_image2{width: 800px;height:250px;border: 2px groove #16c37b; border-radius: 10px 10px;margin-bottom: 10px;background-color:rgb(251, 251, 251);background: url(../../images/park2.jpg) no-repeat;}
     .detail .park_image3{width: 800px;height:250px;border: 2px groove #16c37b; border-radius: 10px 10px;margin-bottom: 10px;background-color:rgb(251, 251, 251);background: url(../../images/park3.jpg) no-repeat;}
-    .detail .park_map2{width: 700px;margin: 10px auto; height:300px;border: 2px groove tomato; border-radius: 10px 10px;background-color:rgb(251, 251, 251);}
-
+    
     .detail .etcs{width: 800px;display: flex; font-size: 14px; text-align: left; justify-content: space-between; margin-bottom: 10px;color:indianred;}
     .detail .etcs .main_equip{width: 500px;border: 2px groove #16c37b;border-radius: 10px 10px;box-sizing:border-box;padding: 10px 25px;background-color:rgb(251, 251, 251);font-weight: bold;}
     .detail .etcs .main_equip h2,h3{color: darkgoldenrod;}
     .detail .etcs .adminpart{width: 290px;border: 2px groove #16c37b;border-radius: 10px 10px;box-sizing: border-box;padding: 10px 25px;background-color:rgb(251, 251, 251);font-weight: bold;}
     .detail .etcs .adminpart h2,h3{color: darkgoldenrod;}
     .detail .etcs .adminpart div{padding-top: 20px;padding-bottom: 30px;}
+    
     .detail .visit_road{font-size: 14px; border: 2px groove #16c37b; border-radius: 10px 10px;box-sizing: border-box;margin-bottom: 10px;padding: 10px 25px;color:#78b0d1;background-color:rgb(251, 251, 251)}
-    .detail .visit_road h2,h3{color: darkgoldenrod;}
+    .detail .visit_road h2,h3{text-align: left; color: darkgoldenrod;}
+    .detail .around_map{width: 750px;margin: 10px auto; height:300px;border: 2px groove tomato; border-radius: 10px 10px;background-color:rgb(251, 251, 251);}
+    .detail .around_map .overlay{height: 20px; font-size: 15px; font-weight: bold; color: orchid;background: white;border: 2px groove #78b0d1; border-radius: 5px 5px; padding: 1px 3px;}
 }
