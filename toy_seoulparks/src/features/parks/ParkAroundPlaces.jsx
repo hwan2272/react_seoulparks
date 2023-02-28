@@ -3,10 +3,11 @@ import { ParkAroundPlaceItem } from './ParkAroundPlaceItem';
 
 export function ParkAroundPlaces({lat, lng}) {
   const { kakao } = window;
-  const ps = new kakao.maps.services.Places(); 
-  let [aroundMap, setAroundMap] = useState(null);
+  const [aroundMap, setAroundMap] = useState(null);
   const [placeFD6List, setPlaceFD6List] = useState([]);
   const [placeCE7List, setPlaceCE7List] = useState([]);
+
+  const ps = new kakao.maps.services.Places(); 
   const userAgent = window.navigator.userAgent.toLowerCase();
 
   useEffect(() => {
@@ -58,7 +59,7 @@ export function ParkAroundPlaces({lat, lng}) {
 
   const getPlaceFD6Data = (lat, lng) => {
     return new Promise((resolve, reject) => {
-      ps.categorySearch('FD6', function(data, status, pagination) {
+      ps.categorySearch('FD6', function(data, status, pagination) { // IOS kakao 인앱브라우저에서 data가 ERROR, status가 null로 떨어짐
         if (status === kakao.maps.services.Status.OK) {
           resolve(data);
         } else {
@@ -73,7 +74,7 @@ export function ParkAroundPlaces({lat, lng}) {
 
   const getPlaceCE7Data = (lat, lng) => {
     return new Promise((resolve, reject) => {
-      ps.categorySearch('CE7', function(data, status, pagination) {
+      ps.categorySearch('CE7', function(data, status, pagination) { // IOS kakao 인앱브라우저에서 data가 ERROR, status가 null로 떨어짐
         if (status === kakao.maps.services.Status.OK) {
           resolve(data);
         } else {
@@ -97,7 +98,6 @@ export function ParkAroundPlaces({lat, lng}) {
         });
       overlay.setMap(aroundMap);
     });
-    //setPlaceFD6List(data);
   }
 
   const displayOverlayCE7 = (data) => {
@@ -111,7 +111,6 @@ export function ParkAroundPlaces({lat, lng}) {
         });
       overlay.setMap(aroundMap);
     });
-    //setPlaceCE7List(data);
   } 
 
   return (
