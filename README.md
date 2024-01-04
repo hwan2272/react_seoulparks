@@ -1,7 +1,7 @@
 # react_seoulparks/toy_seoulparks
 
 
-# 2023. 12 리뉴얼 예정 (머리 굵어짐)
+# 리뉴얼 계획중 (머리 굵어짐)
 
 
 react, redux, 서울시 공원정보api 활용 개인토이프로젝트
