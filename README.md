@@ -1,9 +1,6 @@
 # react_seoulparks/toy_seoulparks
 
 
-# 리뉴얼 계획중 (머리 굵어짐)
-
-
 react, redux, 서울시 공원정보api 활용 개인토이프로젝트
 
 서울시에서 관리하는 공식사이트 "서울의 공원" 이 있지만, 
