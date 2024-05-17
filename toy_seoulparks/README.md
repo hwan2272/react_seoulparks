@@ -1,46 +1,66 @@
-# Getting Started with Create React App and Redux
+# 설힐공-서울의 힐링공원
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+## 개요
 
-## Available Scripts
+- react, redux, 서울시 공원정보api 활용 개인토이프로젝트
+- 서울시에서 관리하는 공식사이트 "서울의 공원" 이 있지만, 프론트학습 활용을 위해 서울시api를 활용해서 만든 프로젝트
+- PC웹, 모바일웹 모두 가능 (어수룩한 반응형..)
+- react + redux + ts + js
+- redux도 최대한 보일러플레이트한 코드들을 쓰지 않도록 하고 -template --redux를 활용
+- react-router-dom 현최신 v6버전. 때문에 이전버전들로 만들어진 소스들과 차이 있음
+- redux store를 활용한 상태저장 관리. 크롬익스텐션에서 실제 확인가능
+- 서울시api, 네이버api, 카카오api 활용.
+- list 및 상세View - 서울시api
+- 상세View내 지도, 파노라마 - 네이버api
+- 상세View내 주변 음식점,카페 지도 - 카카오api
+- http://hwan2272.dothome.co.kr/
 
-In the project directory, you can run:
+## 사용한 라이브러리 및 폰트
 
-### `npm start`
+```
+react
+react-redux
+axios
+react-router-dom
+react-xml-parser
+typescript
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+S-coreDream 폰트 (눈누사이트 무료폰트)
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 라이브러리 설치
 
-### `npm test`
+```
+npm install
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 동작 스크립트 (npm install 후 실행)
 
-### `npm run build`
+```
+npm run start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 주요 폴더 및 리소스 구조 설명
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+ src
+  ├──app
+  │   ├── hooks.ts
+  │   └── store.ts - redux를 사용하기 위한 스토어 정의
+  │
+  ├──fetures - 사이트 내에서 쓰이는 페이지들
+  │   ├── parks
+  │   │     ├── ParkApi.jsx - 공원정보 API 정의
+  │   │     ├── ParkAroundPlaceItem.jsx - 공원 주변 정보 Item 컴포넌트
+  │   │     ├── ParkAroundPlaces.jsx - 공원 주변 정보 항목 컴포넌트
+  │   │     ├── ParkCondition.jsx - 공원 리스트의 구단위 selectbox와 변경 액션(검색) 정의 컴포넌트
+  │   │     ├── ParkDetail.jsx - 공원 상세정보 컴포넌트
+  │   │     ├── ParkItem.jsx - 공원 항목 컴포넌트
+  │   │     ├── ParkMain.jsx - 메인화면 공원 리스트 컴포넌트
+  │   │     ├── ParkMap.js - Naver Map API Init 동작 정의
+  │   │     └── ParkUtil.js - Api response를 Parsing하는 등의 내용 정의
+  │   └── sample - (설명 생략)
+  │
+  ├──search
+  │   └── searchSlice.ts - 검색 동작이 일어났을 시 redux에 의해 검색값을 유지하도록 하기 위한 정의
+```
