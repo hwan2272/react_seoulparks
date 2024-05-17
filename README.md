@@ -65,9 +65,3 @@ npm run start
   ├──search
   │   └── searchSlice.ts - 검색 동작이 일어났을 시 redux에 의해 검색값을 유지하도록 하기 위한 정의
 ```
-
-- 상세View내 지도, 파노라마 - 네이버api
-
-- 상세View내 주변 음식점,카페 지도 - 카카오api
-
-- 폰트 : 눈누사이트 무료폰트중 하나인 S-coreDream
